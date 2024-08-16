@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/kagamirudo/esp-idf/projects/01/build/CMakeFiles/bootloader
+/home/kagamirudo/esp-idf/projects/01/build/CMakeFiles/bootloader.rule
+/home/kagamirudo/esp-idf/projects/01/build/CMakeFiles/bootloader-complete.rule
+/home/kagamirudo/esp-idf/projects/01/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/kagamirudo/esp-idf/projects/01/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/kagamirudo/esp-idf/projects/01/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/kagamirudo/esp-idf/projects/01/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/kagamirudo/esp-idf/projects/01/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/kagamirudo/esp-idf/projects/01/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/kagamirudo/esp-idf/projects/01/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

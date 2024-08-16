@@ -1,0 +1,526 @@
+make[1]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[2]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[3]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[  0%] Built target partition_table_bin
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[  0%] Built target custom_bundle
+[  0%] Built target _project_elf_src
+[  0%] Built target sections.ld.in
+[  0%] Built target memory.ld
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[  0%] Performing build step for 'bootloader'
+Consolidate compiler generated dependencies of target __idf_esp_https_ota
+make[5]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[  0%] Built target __idf_esp_https_ota
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[6]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_log
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[  1%] Built target _project_elf_src
+Consolidate compiler generated dependencies of target __idf_esp_http_server
+[  5%] Built target __idf_log
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[  1%] Built target __idf_esp_http_server
+Consolidate compiler generated dependencies of target __idf_esp_rom
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 12%] Built target __idf_esp_rom
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_esp_http_client
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_common
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[  1%] Built target __idf_esp_http_client
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 13%] Built target __idf_esp_common
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_esp_hw_support
+Consolidate compiler generated dependencies of target __idf_tcp_transport
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 23%] Built target __idf_esp_hw_support
+[  1%] Built target __idf_tcp_transport
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_system
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_esp_gdbstub
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 25%] Built target __idf_esp_system
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[  1%] Built target __idf_esp_gdbstub
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_efuse
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[ 32%] Built target __idf_efuse
+Consolidate compiler generated dependencies of target __idf_esp_adc
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[  2%] Built target __idf_esp_adc
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_bootloader_support
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_esp-tls
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 54%] Built target __idf_bootloader_support
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[  2%] Built target __idf_esp-tls
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_bootloader_format
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_http_parser
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 56%] Built target __idf_esp_bootloader_format
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[  3%] Built target __idf_http_parser
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_spi_flash
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[ 58%] Built target __idf_spi_flash
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_esp_wifi
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_hal
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[  4%] Built target __idf_esp_wifi
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 65%] Built target __idf_hal
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_esp_coex
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_micro-ecc
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[  4%] Built target __idf_esp_coex
+[ 68%] Built target __idf_micro-ecc
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_soc
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 92%] Built target __idf_soc
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_xtensa
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[ 94%] Built target __idf_xtensa
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_main
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[ 95%] Built target __idf_main
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target bootloader.elf
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[ 98%] Built target bootloader.elf
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_wpa_supplicant
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[100%] Built target gen_project_binary
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[ 12%] Built target __idf_wpa_supplicant
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Bootloader binary size 0x6880 bytes. 0x780 bytes (7%) free.
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+Consolidate compiler generated dependencies of target __idf_esp_netif
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[100%] Built target bootloader_check_size
+make[7]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[ 13%] Built target __idf_esp_netif
+make[7]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[100%] Built target app
+make[6]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[5]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build/bootloader'
+[ 13%] No install step for 'bootloader'
+[ 13%] Completed 'bootloader'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 14%] Built target bootloader
+Consolidate compiler generated dependencies of target __idf_lwip
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 23%] Built target __idf_lwip
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_vfs
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 24%] Built target __idf_vfs
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_vfs_console
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 24%] Built target __idf_esp_vfs_console
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_phy
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 25%] Built target __idf_esp_phy
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_driver
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 27%] Built target __idf_driver
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_ledc
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 28%] Built target __idf_esp_driver_ledc
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_i2c
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 28%] Built target __idf_esp_driver_i2c
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdm
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 29%] Built target __idf_esp_driver_sdm
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_rmt
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 29%] Built target __idf_esp_driver_rmt
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_dac
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 30%] Built target __idf_esp_driver_dac
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdio
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 30%] Built target __idf_esp_driver_sdio
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdspi
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 30%] Built target __idf_esp_driver_sdspi
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_sdmmc
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 30%] Built target __idf_esp_driver_sdmmc
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_sdmmc
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 31%] Built target __idf_sdmmc
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_i2s
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 31%] Built target __idf_esp_driver_i2s
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_mcpwm
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 32%] Built target __idf_esp_driver_mcpwm
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_spi
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 33%] Built target __idf_esp_driver_spi
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_pcnt
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 33%] Built target __idf_esp_driver_pcnt
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_nvs_flash
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 34%] Built target __idf_nvs_flash
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_event
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 35%] Built target __idf_esp_event
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_uart
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 35%] Built target __idf_esp_driver_uart
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_ringbuf
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 36%] Built target __idf_esp_ringbuf
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_gptimer
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 37%] Built target __idf_esp_driver_gptimer
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_timer
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 38%] Built target __idf_esp_timer
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_cxx
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 38%] Built target __idf_cxx
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_pthread
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 38%] Built target __idf_pthread
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_newlib
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 40%] Built target __idf_newlib
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_freertos
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 42%] Built target __idf_freertos
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_hw_support
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 46%] Built target __idf_esp_hw_support
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_soc
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 49%] Built target __idf_soc
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_heap
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 49%] Built target __idf_heap
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_log
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 50%] Built target __idf_log
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_hal
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 55%] Built target __idf_hal
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_rom
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 55%] Built target __idf_esp_rom
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_common
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 55%] Built target __idf_esp_common
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_system
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 59%] Built target __idf_esp_system
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_spi_flash
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 61%] Built target __idf_spi_flash
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_mm
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 62%] Built target __idf_esp_mm
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_bootloader_support
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 63%] Built target __idf_bootloader_support
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_efuse
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 64%] Built target __idf_efuse
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_partition
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 64%] Built target __idf_esp_partition
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_app_update
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 65%] Built target __idf_app_update
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_bootloader_format
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 66%] Built target __idf_esp_bootloader_format
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_app_format
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 66%] Built target __idf_esp_app_format
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target mbedtls
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 69%] Built target mbedtls
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target mbedx509
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 70%] Built target mbedx509
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target mbedcrypto
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 79%] Built target mbedcrypto
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target p256m
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 79%] Built target p256m
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target everest
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 80%] Built target everest
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_mbedtls
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 80%] Built target __idf_mbedtls
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_pm
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 80%] Built target __idf_esp_pm
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_gpio
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 80%] Built target __idf_esp_driver_gpio
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_xtensa
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 81%] Built target __idf_xtensa
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_protobuf-c
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_driver_cam
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_app_trace
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_json
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_unity
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_https_server
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_hid
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_console
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 81%] Built target __idf_protobuf-c
+[ 81%] Built target __idf_json
+Consolidate compiler generated dependencies of target __idf_esp_eth
+[ 81%] Built target __idf_app_trace
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_lcd
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 82%] Built target __idf_unity
+[ 82%] Built target __idf_esp_driver_cam
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 85%] Built target __idf_console
+[ 85%] Built target __idf_esp_https_server
+[ 86%] Built target __idf_esp_hid
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 87%] Built target __idf_esp_eth
+Consolidate compiler generated dependencies of target __idf_perfmon
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_nvs_sec_provider
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_espcoredump
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_wear_levelling
+Consolidate compiler generated dependencies of target __idf_mqtt
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 88%] Built target __idf_esp_lcd
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_rt
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_spiffs
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 89%] Built target __idf_espcoredump
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 89%] Built target __idf_perfmon
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 90%] Built target __idf_nvs_sec_provider
+Consolidate compiler generated dependencies of target __idf_protocomm
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 92%] Built target __idf_wear_levelling
+[ 92%] Built target __idf_spiffs
+[ 92%] Built target __idf_rt
+[ 93%] Built target __idf_mqtt
+Consolidate compiler generated dependencies of target __idf_micro_ros_espidf_component
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_cmock
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 95%] Built target __idf_protocomm
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 95%] Built target __idf_micro_ros_espidf_component
+[ 96%] Built target __idf_cmock
+Consolidate compiler generated dependencies of target __idf_fatfs
+Consolidate compiler generated dependencies of target __idf_wifi_provisioning
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_esp_local_ctrl
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[ 97%] Built target __idf_wifi_provisioning
+[ 98%] Built target __idf_fatfs
+[ 98%] Built target __idf_esp_local_ctrl
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target __idf_main
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[100%] Built target __idf_main
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[100%] Built target __ldgen_output_sections.ld
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+Consolidate compiler generated dependencies of target 01.elf
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[100%] Built target 01.elf
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[100%] Built target gen_project_binary
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+01.bin binary size 0x2be70 bytes. Smallest app partition is 0x100000 bytes. 0xd4190 bytes (83%) free.
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[100%] Built target app_check_size
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[100%] Built target app
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[4]: Entering directory '/home/kagamirudo/esp-idf/projects/01/build'
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 01.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.dev4
+Serial port /dev/ttyUSB0
+Connecting.....
+Chip is ESP32-D0WD-V3 (revision v3.0)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: e0:5a:1b:ac:5e:80
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x0003bfff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26752 bytes to 16376...
+Writing at 0x00001000... (100 %)
+Wrote 26752 bytes (16376 compressed) at 0x00001000 in 0.9 seconds (effective 248.8 kbit/s)...
+Hash of data verified.
+Compressed 179824 bytes to 96023...
+Writing at 0x00010000... (16 %)
+Writing at 0x0001c29a... (33 %)
+Writing at 0x00021de9... (50 %)
+Writing at 0x00027986... (66 %)
+Writing at 0x0002f07e... (83 %)
+Writing at 0x000365fe... (100 %)
+Wrote 179824 bytes (96023 compressed) at 0x00010000 in 2.6 seconds (effective 553.1 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 345.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+make[4]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+[100%] Built target flash
+make[3]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[2]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
+make[1]: Leaving directory '/home/kagamirudo/esp-idf/projects/01/build'
