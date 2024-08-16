@@ -5,6 +5,7 @@ build/
 *.o
 *.a
 *.so
+*.obj
 
 # Ignore CMake files
 CMakeCache.txt
