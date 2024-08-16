@@ -224,6 +224,7 @@ void app_main(void)
         ESP_LOGI(TAG, "Partition size: total: %d, used: %d", total, used);
 
     FILE *p = fopen("/storage/index.html", "r+");
+    fclose(p);
 
     while (1)
     {

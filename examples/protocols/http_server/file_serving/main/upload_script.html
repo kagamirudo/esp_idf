@@ -1,80 +1,172 @@
-<table class="fixed" border="0">
-    <col width="1000px" /><col width="500px" />
-    <tr><td>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 File Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #444;
+        }
+
+        .form-table {
+            width: 100%;
+            border-spacing: 0 10px;
+        }
+
+        .form-table label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-table input[type="file"],
+        .form-table input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-table button {
+            padding: 8px 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-table button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-table button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        .form-table td {
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .form-table input[type="text"] {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
         <h2>ESP32 File Server</h2>
-    </td><td>
-        <table border="0">
+        <table class="form-table">
             <tr>
-                <td>
-                    <label for="newfile">Upload a file</label>
-                </td>
-                <td colspan="2">
-                    <input id="newfile" type="file" onchange="setpath()" style="width:100%;">
-                </td>
+                <td><label for="newfile">Upload a file:</label></td>
+                <td colspan="2"><input id="newfile" type="file" onchange="setpath()" accept=".txt,.jpg,.png,.pdf"></td>
             </tr>
             <tr>
-                <td>
-                    <label for="filepath">Set path on server</label>
-                </td>
-                <td>
-                    <input id="filepath" type="text" style="width:100%;">
-                </td>
-                <td>
-                    <button id="upload" type="button" onclick="upload()">Upload</button>
-                </td>
+                <td><label for="filepath">Set path on server:</label></td>
+                <td><input id="filepath" type="text" placeholder="Enter file path"></td>
+                <td><button id="upload" type="button" onclick="upload()">Upload</button></td>
             </tr>
         </table>
-    </td></tr>
-</table>
-<script>
-function setpath() {
-    var default_path = document.getElementById("newfile").files[0].name;
-    document.getElementById("filepath").value = default_path;
-}
-function upload() {
-    var filePath = document.getElementById("filepath").value;
-    var upload_path = "/upload/" + filePath;
-    var fileInput = document.getElementById("newfile").files;
+    </div>
 
-    /* Max size of an individual file. Make sure this
-     * value is same as that set in file_server.c */
-    var MAX_FILE_SIZE = 200*1024;
-    var MAX_FILE_SIZE_STR = "200KB";
-
-    if (fileInput.length == 0) {
-        alert("No file selected!");
-    } else if (filePath.length == 0) {
-        alert("File path on server is not set!");
-    } else if (filePath.indexOf(' ') >= 0) {
-        alert("File path on server cannot have spaces!");
-    } else if (filePath[filePath.length-1] == '/') {
-        alert("File name not specified after path!");
-    } else if (fileInput[0].size > 200*1024) {
-        alert("File size must be less than 200KB!");
-    } else {
-        document.getElementById("newfile").disabled = true;
-        document.getElementById("filepath").disabled = true;
-        document.getElementById("upload").disabled = true;
-
-        var file = fileInput[0];
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (xhttp.readyState == 4) {
-                if (xhttp.status == 200) {
-                    document.open();
-                    document.write(xhttp.responseText);
-                    document.close();
-                } else if (xhttp.status == 0) {
-                    alert("Server closed the connection abruptly!");
-                    location.reload()
-                } else {
-                    alert(xhttp.status + " Error!\n" + xhttp.responseText);
-                    location.reload()
-                }
+    <script>
+        function setpath() {
+            const fileInput = document.getElementById("newfile").files[0];
+            if (fileInput) {
+                document.getElementById("filepath").value = fileInput.name;
             }
-        };
-        xhttp.open("POST", upload_path, true);
-        xhttp.send(file);
-    }
-}
-</script>
+        }
+
+        function upload() {
+            const filePath = document.getElementById("filepath").value.trim();
+            const fileInput = document.getElementById("newfile").files;
+            const uploadPath = "/upload/" + filePath;
+            const MAX_FILE_SIZE = 200 * 1024; // 200KB
+
+            if (fileInput.length === 0) {
+                alert("Please select a file to upload.");
+                return;
+            }
+            if (filePath === "") {
+                alert("Please specify the file path on the server.");
+                return;
+            }
+            if (filePath.includes(" ")) {
+                alert("The file path cannot contain spaces.");
+                return;
+            }
+            if (filePath.endsWith("/")) {
+                alert("Please specify a file name in the path.");
+                return;
+            }
+            if (fileInput[0].size > MAX_FILE_SIZE) {
+                alert(`File size must be less than ${MAX_FILE_SIZE / 1024}KB.`);
+                return;
+            }
+
+            disableInputs(true);
+
+            const file = fileInput[0];
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState === XMLHttpRequest.DONE) {
+                    if (xhttp.status === 200) {
+                        document.open();
+                        document.write(xhttp.responseText);
+                        document.close();
+                    } else {
+                        handleError(xhttp.status, xhttp.responseText);
+                    }
+                    disableInputs(false);
+                }
+            };
+
+            xhttp.open("POST", uploadPath, true);
+            xhttp.send(file);
+        }
+
+        function disableInputs(disable) {
+            document.getElementById("newfile").disabled = disable;
+            document.getElementById("filepath").disabled = disable;
+            document.getElementById("upload").disabled = disable;
+        }
+
+        function handleError(status, responseText) {
+            const errorMessages = {
+                0: "Server closed the connection abruptly!",
+                400: "Bad Request: Check the file and path.",
+                413: "File Too Large: Ensure the file is under the size limit.",
+                500: "Server Error: Try again later.",
+            };
+
+            const message = errorMessages[status] || `${status} Error: ${responseText}`;
+            alert(message);
+            location.reload();
+        }
+    </script>
+</body>
+</html>
