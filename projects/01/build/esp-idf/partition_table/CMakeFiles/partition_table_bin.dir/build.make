@@ -69,13 +69,13 @@ include esp-idf/partition_table/CMakeFiles/partition_table_bin.dir/progress.make
 esp-idf/partition_table/CMakeFiles/partition_table_bin: partition_table/partition-table.bin
 esp-idf/partition_table/CMakeFiles/partition_table_bin: partition_table/partition-table.bin
 
-partition_table/partition-table.bin: ../../../components/partition_table/partitions_singleapp.csv
+partition_table/partition-table.bin: ../partitions.csv
 partition_table/partition-table.bin: ../../../components/partition_table/gen_esp32part.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/kagamirudo/esp-idf/projects/01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../../partition_table/partition-table.bin"
-	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /home/kagamirudo/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/kagamirudo/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --flash-size 2MB -- /home/kagamirudo/esp-idf/components/partition_table/partitions_singleapp.csv /home/kagamirudo/esp-idf/projects/01/build/partition_table/partition-table.bin
+	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /home/kagamirudo/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/kagamirudo/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --flash-size 4MB -- /home/kagamirudo/esp-idf/projects/01/partitions.csv /home/kagamirudo/esp-idf/projects/01/build/partition_table/partition-table.bin
 	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /usr/bin/cmake -E echo "Partition table binary generated. Contents:"
 	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
-	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /home/kagamirudo/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/kagamirudo/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --flash-size 2MB -- /home/kagamirudo/esp-idf/projects/01/build/partition_table/partition-table.bin
+	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /home/kagamirudo/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/kagamirudo/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --flash-size 4MB -- /home/kagamirudo/esp-idf/projects/01/build/partition_table/partition-table.bin
 	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
 
 partition_table_bin: esp-idf/partition_table/CMakeFiles/partition_table_bin

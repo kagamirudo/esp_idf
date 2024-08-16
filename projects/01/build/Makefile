@@ -1878,6 +1878,45 @@ __idf_main/fast:
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
 
+#=============================================================================
+# Target rules for targets named spiffs_storage_bin
+
+# Build rule for target.
+spiffs_storage_bin: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 spiffs_storage_bin
+.PHONY : spiffs_storage_bin
+
+# fast build rule for target.
+spiffs_storage_bin/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/build.make esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/build
+.PHONY : spiffs_storage_bin/fast
+
+#=============================================================================
+# Target rules for targets named storage-flash
+
+# Build rule for target.
+storage-flash: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 storage-flash
+.PHONY : storage-flash
+
+# fast build rule for target.
+storage-flash/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/storage-flash.dir/build.make esp-idf/main/CMakeFiles/storage-flash.dir/build
+.PHONY : storage-flash/fast
+
+#=============================================================================
+# Target rules for targets named encrypted-storage-flash
+
+# Build rule for target.
+encrypted-storage-flash: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 encrypted-storage-flash
+.PHONY : encrypted-storage-flash
+
+# fast build rule for target.
+encrypted-storage-flash/fast:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/build.make esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/build
+.PHONY : encrypted-storage-flash/fast
+
 project_elf_src_esp32.obj: project_elf_src_esp32.c.obj
 .PHONY : project_elf_src_esp32.obj
 
@@ -1934,6 +1973,7 @@ help:
 	@echo "... encrypted-bootloader-flash"
 	@echo "... encrypted-flash"
 	@echo "... encrypted-partition-table-flash"
+	@echo "... encrypted-storage-flash"
 	@echo "... erase_flash"
 	@echo "... flash"
 	@echo "... gen_project_binary"
@@ -1954,6 +1994,8 @@ help:
 	@echo "... size"
 	@echo "... size-components"
 	@echo "... size-files"
+	@echo "... spiffs_storage_bin"
+	@echo "... storage-flash"
 	@echo "... uf2"
 	@echo "... uf2-app"
 	@echo "... 01.elf"

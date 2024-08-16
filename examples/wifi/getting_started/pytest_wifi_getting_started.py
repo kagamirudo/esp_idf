@@ -5,7 +5,7 @@ import os.path
 from typing import Tuple
 
 import pytest
-from pytest_embedded_idf.dut import IdfDut
+from pytest_embedded_idf.dut import IdfDut # type: ignore
 
 # @pytest.mark.supported_targets
 # This test should support all targets, even between different target types

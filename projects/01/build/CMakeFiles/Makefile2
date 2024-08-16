@@ -1645,6 +1645,7 @@ esp-idf/lwip/clean: esp-idf/lwip/CMakeFiles/__idf_lwip.dir/clean
 
 # Recursive "all" directory target.
 esp-idf/main/all: esp-idf/main/CMakeFiles/__idf_main.dir/all
+esp-idf/main/all: esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/all
 .PHONY : esp-idf/main/all
 
 # Recursive "preinstall" directory target.
@@ -1653,6 +1654,10 @@ esp-idf/main/preinstall:
 
 # Recursive "clean" directory target.
 esp-idf/main/clean: esp-idf/main/CMakeFiles/__idf_main.dir/clean
+esp-idf/main/clean: esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/clean
+esp-idf/main/clean: esp-idf/main/CMakeFiles/storage-flash.dir/clean
+esp-idf/main/clean: esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/clean
+	$(CMAKE_COMMAND) -P esp-idf/main/CMakeFiles/cmake_directory_clean.cmake
 .PHONY : esp-idf/main/clean
 
 #=============================================================================
@@ -2491,6 +2496,7 @@ CMakeFiles/monitor.dir/clean:
 CMakeFiles/flash.dir/all: CMakeFiles/bootloader.dir/all
 CMakeFiles/flash.dir/all: CMakeFiles/app.dir/all
 CMakeFiles/flash.dir/all: esp-idf/partition_table/CMakeFiles/partition_table_bin.dir/all
+CMakeFiles/flash.dir/all: esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flash.dir/build.make CMakeFiles/flash.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flash.dir/build.make CMakeFiles/flash.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kagamirudo/esp-idf/projects/01/build/CMakeFiles --progress-num= "Built target flash"
@@ -5720,6 +5726,84 @@ __idf_main: esp-idf/main/CMakeFiles/__idf_main.dir/rule
 esp-idf/main/CMakeFiles/__idf_main.dir/clean:
 	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/clean
 .PHONY : esp-idf/main/CMakeFiles/__idf_main.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/main/CMakeFiles/spiffs_storage_bin.dir
+
+# All Build rule for target.
+esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/all:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/build.make esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/build.make esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kagamirudo/esp-idf/projects/01/build/CMakeFiles --progress-num= "Built target spiffs_storage_bin"
+.PHONY : esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kagamirudo/esp-idf/projects/01/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kagamirudo/esp-idf/projects/01/build/CMakeFiles 0
+.PHONY : esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/rule
+
+# Convenience name for target.
+spiffs_storage_bin: esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/rule
+.PHONY : spiffs_storage_bin
+
+# clean rule for target.
+esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/build.make esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/clean
+.PHONY : esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/main/CMakeFiles/storage-flash.dir
+
+# All Build rule for target.
+esp-idf/main/CMakeFiles/storage-flash.dir/all: esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/all
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/storage-flash.dir/build.make esp-idf/main/CMakeFiles/storage-flash.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/storage-flash.dir/build.make esp-idf/main/CMakeFiles/storage-flash.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kagamirudo/esp-idf/projects/01/build/CMakeFiles --progress-num= "Built target storage-flash"
+.PHONY : esp-idf/main/CMakeFiles/storage-flash.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/main/CMakeFiles/storage-flash.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kagamirudo/esp-idf/projects/01/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/storage-flash.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kagamirudo/esp-idf/projects/01/build/CMakeFiles 0
+.PHONY : esp-idf/main/CMakeFiles/storage-flash.dir/rule
+
+# Convenience name for target.
+storage-flash: esp-idf/main/CMakeFiles/storage-flash.dir/rule
+.PHONY : storage-flash
+
+# clean rule for target.
+esp-idf/main/CMakeFiles/storage-flash.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/storage-flash.dir/build.make esp-idf/main/CMakeFiles/storage-flash.dir/clean
+.PHONY : esp-idf/main/CMakeFiles/storage-flash.dir/clean
+
+#=============================================================================
+# Target rules for target esp-idf/main/CMakeFiles/encrypted-storage-flash.dir
+
+# All Build rule for target.
+esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/all:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/build.make esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/depend
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/build.make esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/kagamirudo/esp-idf/projects/01/build/CMakeFiles --progress-num= "Built target encrypted-storage-flash"
+.PHONY : esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/all
+
+# Build rule for subdir invocation for target.
+esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kagamirudo/esp-idf/projects/01/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kagamirudo/esp-idf/projects/01/build/CMakeFiles 0
+.PHONY : esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/rule
+
+# Convenience name for target.
+encrypted-storage-flash: esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/rule
+.PHONY : encrypted-storage-flash
+
+# clean rule for target.
+esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/clean:
+	$(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/build.make esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/clean
+.PHONY : esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

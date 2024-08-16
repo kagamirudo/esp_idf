@@ -152,10 +152,13 @@ esp-idf/main/CMakeFiles/__idf_main.dir/01.c.obj: ../main/01.c \
   /home/kagamirudo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/_pthreadtypes.h \
   /home/kagamirudo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/sched.h \
   /home/kagamirudo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/types.h \
+  /home/kagamirudo/esp-idf/components/spiffs/include/esp_spiffs.h \
   ../main/my_data.h
 
 
 ../main/my_data.h:
+
+/home/kagamirudo/esp-idf/components/spiffs/include/esp_spiffs.h:
 
 /home/kagamirudo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/timespec.h:
 

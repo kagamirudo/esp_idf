@@ -118,7 +118,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/kagamirudo/esp-idf/components/nvs_sec_provider/CMakeLists.txt"
   "/home/kagamirudo/esp-idf/components/openthread/CMakeLists.txt"
   "/home/kagamirudo/esp-idf/components/partition_table/CMakeLists.txt"
-  "/home/kagamirudo/esp-idf/components/partition_table/partitions_singleapp.csv"
   "/home/kagamirudo/esp-idf/components/partition_table/project_include.cmake"
   "/home/kagamirudo/esp-idf/components/perfmon/CMakeLists.txt"
   "/home/kagamirudo/esp-idf/components/protobuf-c/CMakeLists.txt"
@@ -157,11 +156,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "esp-idf/bootloader/bootloader-flash_args.in"
   "esp-idf/esptool_py/app-flash_args.in"
   "esp-idf/esptool_py/flasher_args.json.in"
+  "esp-idf/main/storage-flash_args.in"
   "esp-idf/partition_table/partition-table-flash_args.in"
   "flash_args"
   "flash_args.in"
   "ldgen_libraries.in"
   "../main/CMakeLists.txt"
+  "../partitions.csv"
   "../sdkconfig"
   "/home/kagamirudo/esp-idf/tools/cmake/build.cmake"
   "/home/kagamirudo/esp-idf/tools/cmake/component.cmake"
@@ -366,6 +367,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "esp-idf/ulp/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/usb/CMakeFiles/CMakeDirectoryInformation.cmake"
   "esp-idf/wifi_provisioning/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "esp-idf/main/storage-flash_args.in"
+  "storage-flash_args"
   "esp-idf/main/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -503,4 +506,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "esp-idf/spiffs/CMakeFiles/__idf_spiffs.dir/DependInfo.cmake"
   "esp-idf/wifi_provisioning/CMakeFiles/__idf_wifi_provisioning.dir/DependInfo.cmake"
   "esp-idf/main/CMakeFiles/__idf_main.dir/DependInfo.cmake"
+  "esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/DependInfo.cmake"
+  "esp-idf/main/CMakeFiles/storage-flash.dir/DependInfo.cmake"
+  "esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/DependInfo.cmake"
   )

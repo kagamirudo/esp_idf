@@ -69,7 +69,7 @@ include esp-idf/partition_table/CMakeFiles/partition-table.dir/progress.make
 esp-idf/partition_table/CMakeFiles/partition-table:
 	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /usr/bin/cmake -E echo "Partition table binary generated. Contents:"
 	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
-	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /home/kagamirudo/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/kagamirudo/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --flash-size 2MB -- /home/kagamirudo/esp-idf/projects/01/build/partition_table/partition-table.bin
+	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /home/kagamirudo/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/kagamirudo/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --flash-size 4MB -- /home/kagamirudo/esp-idf/projects/01/build/partition_table/partition-table.bin
 	cd /home/kagamirudo/esp-idf/projects/01/build/esp-idf/partition_table && /usr/bin/cmake -E echo "*******************************************************************************"
 
 partition-table: esp-idf/partition_table/CMakeFiles/partition-table

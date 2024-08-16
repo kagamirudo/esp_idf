@@ -150,4 +150,5 @@ esp-idf/main/CMakeFiles/__idf_main.dir/01.c.obj: \
  /home/kagamirudo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/_pthreadtypes.h \
  /home/kagamirudo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/sys/sched.h \
  /home/kagamirudo/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/xtensa-esp-elf/include/machine/types.h \
+ /home/kagamirudo/esp-idf/components/spiffs/include/esp_spiffs.h \
  /home/kagamirudo/esp-idf/projects/01/main/my_data.h

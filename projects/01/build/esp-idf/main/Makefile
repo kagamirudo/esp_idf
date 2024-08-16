@@ -176,6 +176,48 @@ __idf_main/fast:
 	cd /home/kagamirudo/esp-idf/projects/01/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/__idf_main.dir/build.make esp-idf/main/CMakeFiles/__idf_main.dir/build
 .PHONY : __idf_main/fast
 
+# Convenience name for target.
+esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/rule:
+	cd /home/kagamirudo/esp-idf/projects/01/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/rule
+.PHONY : esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/rule
+
+# Convenience name for target.
+spiffs_storage_bin: esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/rule
+.PHONY : spiffs_storage_bin
+
+# fast build rule for target.
+spiffs_storage_bin/fast:
+	cd /home/kagamirudo/esp-idf/projects/01/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/build.make esp-idf/main/CMakeFiles/spiffs_storage_bin.dir/build
+.PHONY : spiffs_storage_bin/fast
+
+# Convenience name for target.
+esp-idf/main/CMakeFiles/storage-flash.dir/rule:
+	cd /home/kagamirudo/esp-idf/projects/01/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/storage-flash.dir/rule
+.PHONY : esp-idf/main/CMakeFiles/storage-flash.dir/rule
+
+# Convenience name for target.
+storage-flash: esp-idf/main/CMakeFiles/storage-flash.dir/rule
+.PHONY : storage-flash
+
+# fast build rule for target.
+storage-flash/fast:
+	cd /home/kagamirudo/esp-idf/projects/01/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/storage-flash.dir/build.make esp-idf/main/CMakeFiles/storage-flash.dir/build
+.PHONY : storage-flash/fast
+
+# Convenience name for target.
+esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/rule:
+	cd /home/kagamirudo/esp-idf/projects/01/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/rule
+.PHONY : esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/rule
+
+# Convenience name for target.
+encrypted-storage-flash: esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/rule
+.PHONY : encrypted-storage-flash
+
+# fast build rule for target.
+encrypted-storage-flash/fast:
+	cd /home/kagamirudo/esp-idf/projects/01/build && $(MAKE) $(MAKESILENT) -f esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/build.make esp-idf/main/CMakeFiles/encrypted-storage-flash.dir/build
+.PHONY : encrypted-storage-flash/fast
+
 01.obj: 01.c.obj
 .PHONY : 01.obj
 
@@ -212,6 +254,9 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... encrypted-storage-flash"
+	@echo "... spiffs_storage_bin"
+	@echo "... storage-flash"
 	@echo "... __idf_main"
 	@echo "... 01.obj"
 	@echo "... 01.i"

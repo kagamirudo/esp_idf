@@ -13,6 +13,8 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
 
+#include "esp_spiffs.h"
+
 #include "my_data.h"
 
 #define GREEN_LED 18
@@ -201,9 +203,27 @@ void app_main(void)
     float traffic_light_timeout[] = {20, 2, 20};
     set_up_light(traffic_lights);
 
-    nvs_flash_init();
-    wifi_connection();
-    start_webserver();
+    // nvs_flash_init();
+    // wifi_connection();
+    // start_webserver();
+
+    esp_vfs_spiffs_conf_t config = {
+        .base_path = "/storage",
+        .partition_label = NULL, // Just one partition
+        .max_files = 5,
+        .format_if_mount_failed = true};
+
+    esp_err_t result = esp_vfs_spiffs_register(&config);
+    if (result != ESP_OK)
+        ESP_LOGE(TAG, "Failed to init SPIFFS (%s)", esp_err_to_name(result));
+    size_t total = 0, used = 0;
+    result = esp_spiffs_info(config.partition_label, &total, &used);
+    if (result != ESP_OK)
+        ESP_LOGE(TAG, "Failed to get partition info (%s)", esp_err_to_name(result));
+    else
+        ESP_LOGI(TAG, "Partition size: total: %d, used: %d", total, used);
+
+    FILE *p = fopen("/storage/index.html", "r+");
 
     while (1)
     {
