@@ -1,0 +1,28 @@
+# Ignore build output directories
+build/
+
+# Ignore compiled object files and libraries
+*.o
+*.a
+*.so
+
+# Ignore CMake files
+CMakeCache.txt
+CMakeFiles/
+
+# Ignore generated binary files
+*.bin
+*.elf
+*.map
+
+# Ignore NVS partition
+partition_table/
+
+# Ignore ESP-IDF specific files
+sdkconfig
+sdkconfig.old
+
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+*.pyo
