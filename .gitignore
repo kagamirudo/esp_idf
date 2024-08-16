@@ -14,6 +14,7 @@ CMakeFiles/
 *.bin
 *.elf
 *.map
+*.json
 
 # Ignore NVS partition
 partition_table/
