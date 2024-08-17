@@ -26,6 +26,7 @@ CMakeFiles/
 sdkconfig
 sdkconfig.old
 partition_table/
+components/micro_ros_espidf_component
 
 # Python bytecode
 __pycache__/
