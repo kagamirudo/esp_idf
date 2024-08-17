@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7a86d1;
+    margin: 0;
+    padding: 20px;
+    color: #000000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #9e60e6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: #000000;
+}
+
+.form-table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.form-table label {
+    font-weight: bold;
+    color: #000000;
+}
+
+.form-table input[type="file"],
+.form-table input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-table button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-table button:hover {
+    background-color: #0056b3;
+}
+
+.form-table button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.form-table td {
+    vertical-align: middle;
+}
+
+.fix {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.fix th,
+.fix td {
+    padding: 12px 15px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.fix th {
+    background-color: #6c757d;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: none;
+}
+
+.fix tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.fix tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.fix tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+
+.fix tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+.fix tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.fix tr:hover {
+    background-color: #e2e6ea;
+}
+
+.fix button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.fix button:hover {
+    background-color: #0056b3;
+}
+
+.fix td:first-child,
+.fix th:first-child {
+    border-left: none;
+}
+
+.fix td:last-child,
+.fix th:last-child {
+    border-right: none;
+}
+
+
+@media (max-width: 768px) {
+    .form-table input[type="text"] {
+        margin-bottom: 10px;
+    }
+}

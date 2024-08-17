@@ -98,23 +98,23 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         return ESP_FAIL;
     }
 
-    /* Send HTML file header */
-    httpd_resp_sendstr_chunk(req, "<!DOCTYPE html><html><body>");
-
     /* Get handle to embedded file upload script */
     extern const unsigned char upload_script_start[] asm("_binary_upload_script_html_start");
     extern const unsigned char upload_script_end[] asm("_binary_upload_script_html_end");
     const size_t upload_script_size = (upload_script_end - upload_script_start);
 
+    extern const unsigned char styles_start[] asm("_binary_styles_css_start");
+    extern const unsigned char styles_end[] asm("_binary_styles_css_end");
+    const size_t styles_size = (styles_end - styles_start);
+
     /* Add file upload form and script which on execution sends a POST request to /upload */
     httpd_resp_send_chunk(req, (const char *)upload_script_start, upload_script_size);
+    httpd_resp_sendstr_chunk(req, "\n<style>\n");
+    httpd_resp_send_chunk(req, (const char *)styles_start, styles_size);
+    httpd_resp_sendstr_chunk(req, "\n</style>\n");
 
     /* Send file-list table definition and column labels */
-    httpd_resp_sendstr_chunk(req,
-                             "<table class=\"fixed\" border=\"1\">"
-                             "<col width=\"800px\" /><col width=\"300px\" /><col width=\"300px\" /><col width=\"100px\" />"
-                             "<thead><tr><th>Name</th><th>Type</th><th>Size (Bytes)</th><th>Delete</th></tr></thead>"
-                             "<tbody>");
+    httpd_resp_sendstr_chunk(req, "\n<tbody>\n");
 
     /* Iterate over all files / folders and fetch their names and sizes */
     while ((entry = readdir(dir)) != NULL)
@@ -131,7 +131,7 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         ESP_LOGI(TAG, "Found %s : %s (%s bytes)", entrytype, entry->d_name, entrysize);
 
         /* Send chunk of HTML file containing table entries with file name and size */
-        httpd_resp_sendstr_chunk(req, "<tr><td><a href=\"");
+        httpd_resp_sendstr_chunk(req, "<tr>\n<td><a href=\"");
         httpd_resp_sendstr_chunk(req, req->uri);
         httpd_resp_sendstr_chunk(req, entry->d_name);
         if (entry->d_type == DT_DIR)
@@ -140,24 +140,27 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         }
         httpd_resp_sendstr_chunk(req, "\">");
         httpd_resp_sendstr_chunk(req, entry->d_name);
-        httpd_resp_sendstr_chunk(req, "</a></td><td>");
+        httpd_resp_sendstr_chunk(req, "</a></td>\n<td>");
         httpd_resp_sendstr_chunk(req, entrytype);
-        httpd_resp_sendstr_chunk(req, "</td><td>");
+        httpd_resp_sendstr_chunk(req, "</td>\n<td>");
         httpd_resp_sendstr_chunk(req, entrysize);
-        httpd_resp_sendstr_chunk(req, "</td><td>");
+        httpd_resp_sendstr_chunk(req, "</td>\n<td>");
         httpd_resp_sendstr_chunk(req, "<form method=\"post\" action=\"/delete");
         httpd_resp_sendstr_chunk(req, req->uri);
         httpd_resp_sendstr_chunk(req, entry->d_name);
-        httpd_resp_sendstr_chunk(req, "\"><button type=\"submit\">Delete</button></form>");
-        httpd_resp_sendstr_chunk(req, "</td></tr>\n");
+        httpd_resp_sendstr_chunk(req, "\">\n<button type=\"submit\">Delete</button></form>");
+        httpd_resp_sendstr_chunk(req, "</td>\n</tr>\n");
     }
     closedir(dir);
 
+    /* Adding .js path file*/
+    // httpd_resp_sendstr_chunk(req, "<script src=\"script.js\"></script>");
+
     /* Finish the file list table */
-    httpd_resp_sendstr_chunk(req, "</tbody></table>");
+    httpd_resp_sendstr_chunk(req, "</tbody>\n</table>");
 
     /* Send remaining chunk of HTML file to complete it */
-    httpd_resp_sendstr_chunk(req, "</body></html>");
+    httpd_resp_sendstr_chunk(req, "\n</body>\n</html>");
 
     /* Send empty chunk to signal HTTP response completion */
     httpd_resp_sendstr_chunk(req, NULL);
@@ -177,6 +180,14 @@ static esp_err_t set_content_type_from_file(httpd_req_t *req, const char *filena
     else if (IS_FILE_EXT(filename, ".html"))
     {
         return httpd_resp_set_type(req, "text/html");
+    }
+    else if (IS_FILE_EXT(filename, ".js"))
+    {
+        return httpd_resp_set_type(req, "text/.js");
+    }
+    else if (IS_FILE_EXT(filename, ".css"))
+    {
+        return httpd_resp_set_type(req, "text/.css");
     }
     else if (IS_FILE_EXT(filename, ".jpeg"))
     {
@@ -257,6 +268,25 @@ static esp_err_t download_get_handler(httpd_req_t *req)
         else if (strcmp(filename, "/favicon.ico") == 0)
         {
             return favicon_get_handler(req);
+        }
+
+        else if (strcmp(filename, "/styles.css") == 0)
+        {
+            extern const unsigned char styles_start[] asm("_binary_styles_css_start");
+            extern const unsigned char styles_end[] asm("_binary_styles_css_end");
+            const size_t styles_size = (styles_end - styles_start);
+            httpd_resp_send_chunk(req, (const char *)styles_start, styles_size);
+            httpd_resp_sendstr_chunk(req, NULL);
+            return ESP_OK;
+        }
+        else if (strcmp(filename, "/script.js") == 0)
+        {
+            extern const unsigned char script_start[] asm("_binary_script_js_start");
+            extern const unsigned char script_end[] asm("_binary_script_js_end");
+            const size_t script_size = (script_end - script_start);
+            httpd_resp_send_chunk(req, (const char *)script_start, script_size);
+            httpd_resp_sendstr_chunk(req, NULL);
+            return ESP_OK;
         }
         ESP_LOGE(TAG, "Failed to stat file : %s", filepath);
         /* Respond with 404 Not Found */
