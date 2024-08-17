@@ -11,13 +11,13 @@ import sys
 import pytest
 
 try:
-    from idf_http_server_test import adder as client
+    from idf_http_server_test import adder as client # type: ignore
 except ModuleNotFoundError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', 'tools', 'ci', 'python_packages'))
     from idf_http_server_test import adder as client
 
 from common_test_methods import get_env_config_variable
-from pytest_embedded import Dut
+from pytest_embedded import Dut # type: ignore
 
 
 @pytest.mark.esp32

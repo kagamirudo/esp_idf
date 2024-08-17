@@ -17,6 +17,7 @@ tools/test_apps/**/build_*_*/
 *.bin
 *.elf
 *.map
+*.json
 
 # CMake files
 CMakeCache.txt
