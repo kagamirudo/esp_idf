@@ -11,19 +11,19 @@
 <body>
     <div class="container">
         <h1>Traffic Light Control</h1>
-        <div class="timeout-group">
+        <div class="timeout-group" action="/get">
             <label for="red-timeout">Red Light Timeout (seconds)</label>
             <input type="number" id="red-timeout" step="0.1" placeholder="Enter timeout for Red">
         </div>
-        <div class="timeout-group">
+        <div class="timeout-group" action="/get">
             <label for="yellow-timeout">Yellow Light Timeout (seconds)</label>
             <input type="number" id="yellow-timeout" step="0.1" placeholder="Enter timeout for Yellow">
         </div>
-        <div class="timeout-group">
+        <div class="timeout-group" action="/get">
             <label for="green-timeout">Green Light Timeout (seconds)</label>
             <input type="number" id="green-timeout" step="0.1" placeholder="Enter timeout for Green">
         </div>
-        <div class="button-group">
+        <div class="button-group" action="/get">
             <button id="start-button">Start</button>
             <button id="stop-button" class="stop">Stop</button>
         </div>
