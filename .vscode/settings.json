@@ -16,5 +16,6 @@
     "C_Cpp.default.compilerPath": "/usr/bin/gcc",
     "python.analysis.extraPaths": [
         "./tools/ci/python_packages"
-    ]
+    ],
+    "cmake.configureOnOpen": true
 }
