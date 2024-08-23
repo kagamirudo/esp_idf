@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traffic Light Control</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+    <link rel="icon" href="/logo.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -23,8 +24,8 @@
             <label for="green-timeout">Green Light Timeout (seconds)</label>
             <input type="number" id="green-timeout" step="0.1" placeholder="Enter timeout for Green">
         </div>
-        <div class="button-group" action="/get">
-            <button id="start-button">Start</button>
+        <div class="button-group">
+            <button id="start-button" action="/get">Start</button>
             <button id="stop-button" class="stop">Stop</button>
         </div>
         <div id="notification" class="notification"></div>

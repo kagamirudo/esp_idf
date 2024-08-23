@@ -1,15 +1,15 @@
 #if !CONFIG_IDF_TARGET_LINUX
 #if CONFIG_CONNECT_WIFI
-#define NETIF_DESC_STA "example_netif_sta"
+#define NETIF_DESC_STA "wifi_netif_sta"
 #endif
 #endif
 
 #if CONFIG_CONNECT_ETHERNET
-#define NETIF_DESC_ETH "example_netif_eth"
+#define NETIF_DESC_ETH "wifi_netif_eth"
 #endif
 
 #if CONFIG_CONNECT_PPP
-#define NETIF_DESC_PPP "example_netif_ppp"
+#define NETIF_DESC_PPP "wifi_netif_ppp"
 #endif
 
 #if CONFIG_WIFI_SCAN_METHOD_FAST
@@ -44,16 +44,21 @@
 #define WIFI_SCAN_AUTH_MODE_THRESHOLD WIFI_AUTH_WAPI_PSK
 #endif
 
-static void handler_on_wifi_disconnect(void *arg, esp_event_base_t event_base,
-                                       int32_t event_id, void *event_data);
-static void wifi_handler_on_wifi_connect(void *esp_netif, esp_event_base_t event_base,
-                                         int32_t event_id, void *event_data);
-static void wifi_handler_on_sta_got_ip(void *arg, esp_event_base_t event_base,
-                                       int32_t event_id, void *event_data);
-void wifi_start(void);
 void wifi_stop(void);
-esp_err_t wifi_sta_do_connect(wifi_config_t wifi_config, bool wait);
-esp_err_t wifi_sta_do_disconnect(void);
+void wifi_start(void);
 void wifi_shutdown(void);
+
 esp_err_t wifi_connect(void);
 esp_err_t esp32_wifi_connect(void);
+esp_err_t wifi_sta_do_disconnect(void);
+esp_err_t wifi_sta_do_connect(wifi_config_t wifi_config, bool wait);
+
+static void 
+wifi_handler_on_sta_got_ip(void *arg, esp_event_base_t event_base,
+                                       int32_t event_id, void *event_data);
+static void 
+handler_on_wifi_disconnect(void *arg, esp_event_base_t event_base,
+                                       int32_t event_id, void *event_data);
+static void 
+wifi_handler_on_wifi_connect(void *esp_netif, esp_event_base_t event_base,
+                                         int32_t event_id, void *event_data);

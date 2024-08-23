@@ -31,49 +31,51 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req)
     extern const unsigned char index_end[] asm("_binary_index_html_end");
     const size_t index_size = (index_end - index_start);
 
-    extern const unsigned char styles_start[] asm("_binary_styles_css_start");
-    extern const unsigned char styles_end[] asm("_binary_styles_css_end");
-    const size_t styles_size = (styles_end - styles_start);
-
-    extern const unsigned char script_start[] asm("_binary_script_js_start");
-    extern const unsigned char script_end[] asm("_binary_script_js_end");
-    const size_t script_size = (script_end - script_start);
-
-    httpd_resp_send_chunk(req, (const char *)index_start, index_size);
-    httpd_resp_sendstr_chunk(req, "\n<style>\n");
-    httpd_resp_send_chunk(req, (const char *)styles_start, styles_size);
-    httpd_resp_sendstr_chunk(req, "\n</style>\n");
-    httpd_resp_sendstr_chunk(req, "\n<script>\n");
-    httpd_resp_send_chunk(req, (const char *)script_start, script_size);
-    httpd_resp_sendstr_chunk(req, "\n</script>\n");
-    httpd_resp_sendstr_chunk(req, NULL);
+    httpd_resp_set_type(req, "text/html");
+    httpd_resp_send(req, (const char *)index_start, index_size);
     return ESP_OK;
 }
 
 static esp_err_t get_handler(httpd_req_t *req)
 {
-    char *filename = (char *)req->uri;
+    int len = strlen(req->uri);
+    char *filename = (char *)malloc(len + 1);
+    strcpy(filename, (char *)req->uri);
 
     ESP_LOGI(TAG, "req's name has %d is: %s", strlen(filename), filename);
 
-    if (strcmp(filename, "/") == 0 || strcmp(filename, "/index.html") == 0)
-    {
+    if (strcmp(filename, "/index.html") == 0)
+        return index_html_get_handler(req);
+
+    else if (strcmp(filename, "/") == 0)
         return http_resp_dir_html(req);
-    }
+
     else if (strcmp(filename, "/styles.css") == 0)
     {
         extern const unsigned char styles_start[] asm("_binary_styles_css_start");
         extern const unsigned char styles_end[] asm("_binary_styles_css_end");
         const size_t styles_size = (styles_end - styles_start);
+        httpd_resp_set_type(req, "text/css");
         httpd_resp_send(req, (const char *)styles_start, styles_size);
         return ESP_OK;
     }
+
     else if (strcmp(filename, "/script.js") == 0)
     {
         extern const unsigned char script_start[] asm("_binary_script_js_start");
         extern const unsigned char script_end[] asm("_binary_script_js_end");
         const size_t script_size = (script_end - script_start);
+        httpd_resp_set_type(req, "application/javascript");
         httpd_resp_send(req, (const char *)script_start, script_size);
+        return ESP_OK;
+    }
+    else if (strcmp(filename, "/logo.ico") == 0)
+    {
+        extern const unsigned char logo_ico_start[] asm("_binary_logo_ico_start");
+        extern const unsigned char logo_ico_end[] asm("_binary_logo_ico_end");
+        const size_t logo_size = (logo_ico_end - logo_ico_start);
+        httpd_resp_set_type(req, "image/x-icon");
+        httpd_resp_send(req, (const char *)logo_ico_start, logo_size);
         return ESP_OK;
     }
 
@@ -127,12 +129,47 @@ static esp_err_t input_get_handler(httpd_req_t *req)
     return ESP_OK;
 }
 
-static const httpd_uri_t load_page = {
-    .uri = "/", // Match all URIs of type /path/to/file
+static const httpd_uri_t load_root = {
+    .uri = "/",
     .method = HTTP_GET,
     .handler = get_handler,
     .user_ctx = "Loaded website..." // Pass
 };
+
+static const httpd_uri_t load_page = {
+    .uri = "/*", // Match all URIs of type /path/to/file
+    .method = HTTP_GET,
+    .handler = get_handler,
+    .user_ctx = "Loaded website..." // Pass
+};
+
+// static const httpd_uri_t html_uri = {
+//     .uri = "/index.html",
+//     .method = HTTP_GET,
+//     .handler = get_handler,
+//     .user_ctx = "Loaded html" // Pass
+// };
+
+// static const httpd_uri_t css_uri = {
+//     .uri = "/styles.css",
+//     .method = HTTP_GET,
+//     .handler = get_handler,
+//     .user_ctx = "Loaded css" // Pass
+// };
+
+// static const httpd_uri_t js_uri = {
+//     .uri = "/script.js",
+//     .method = HTTP_GET,
+//     .handler = get_handler,
+//     .user_ctx = "Loaded js" // Pass
+// };
+
+// static const httpd_uri_t logo_uri = {
+//     .uri = "/logo.ico",
+//     .method = HTTP_GET,
+//     .handler = get_handler,
+//     .user_ctx = "Loaded logo" // Pass
+// };
 
 static const httpd_uri_t get_input = {
     .uri = "/get",
@@ -152,8 +189,13 @@ httpd_handle_t start_server(void)
 
     if (httpd_start(&server, &config) == ESP_OK)
     {
+        httpd_register_uri_handler(server, &load_root);
         httpd_register_uri_handler(server, &load_page);
         httpd_register_uri_handler(server, &get_input);
+        // httpd_register_uri_handler(server, &html_uri);
+        // httpd_register_uri_handler(server, &css_uri);
+        // httpd_register_uri_handler(server, &js_uri);
+        // httpd_register_uri_handler(server, &logo_uri);
         return server;
     }
     ESP_LOGI(TAG, "Error starting server!");
