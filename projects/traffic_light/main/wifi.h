@@ -1,7 +1,13 @@
-#if !CONFIG_IDF_TARGET_LINUX
-#if CONFIG_CONNECT_WIFI
+#ifndef WIFI_H
+#define WIFI_H
+
+#include "esp_err.h"
+#include "esp_wifi_types.h"
+#include "esp_event_base.h"
+
+// Configuration macros
+#if !CONFIG_IDF_TARGET_LINUX && CONFIG_CONNECT_WIFI
 #define NETIF_DESC_STA "wifi_netif_sta"
-#endif
 #endif
 
 #if CONFIG_CONNECT_ETHERNET
@@ -44,6 +50,7 @@
 #define WIFI_SCAN_AUTH_MODE_THRESHOLD WIFI_AUTH_WAPI_PSK
 #endif
 
+// Function declarations
 void wifi_stop(void);
 void wifi_start(void);
 void wifi_shutdown(void);
@@ -53,12 +60,12 @@ esp_err_t esp32_wifi_connect(void);
 esp_err_t wifi_sta_do_disconnect(void);
 esp_err_t wifi_sta_do_connect(wifi_config_t wifi_config, bool wait);
 
-static void 
-wifi_handler_on_sta_got_ip(void *arg, esp_event_base_t event_base,
-                                       int32_t event_id, void *event_data);
-static void 
-handler_on_wifi_disconnect(void *arg, esp_event_base_t event_base,
-                                       int32_t event_id, void *event_data);
-static void 
-wifi_handler_on_wifi_connect(void *esp_netif, esp_event_base_t event_base,
-                                         int32_t event_id, void *event_data);
+// Event handler declarations
+void wifi_handler_on_sta_got_ip(void *arg, esp_event_base_t event_base,
+                                int32_t event_id, void *event_data);
+void handler_on_wifi_disconnect(void *arg, esp_event_base_t event_base,
+                                int32_t event_id, void *event_data);
+void wifi_handler_on_wifi_connect(void *esp_netif, esp_event_base_t event_base,
+                                  int32_t event_id, void *event_data);
+
+#endif // WIFI_H

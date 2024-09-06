@@ -12,22 +12,24 @@
 <body>
     <div class="container">
         <h1>Traffic Light Control</h1>
-        <div class="timeout-group" action="/get">
-            <label for="red-timeout">Red Light Timeout (seconds)</label>
-            <input type="number" id="red-timeout" step="0.1" placeholder="Enter timeout for Red">
-        </div>
-        <div class="timeout-group" action="/get">
-            <label for="yellow-timeout">Yellow Light Timeout (seconds)</label>
-            <input type="number" id="yellow-timeout" step="0.1" placeholder="Enter timeout for Yellow">
-        </div>
-        <div class="timeout-group" action="/get">
-            <label for="green-timeout">Green Light Timeout (seconds)</label>
-            <input type="number" id="green-timeout" step="0.1" placeholder="Enter timeout for Green">
-        </div>
-        <div class="button-group">
-            <button id="start-button" action="/get">Start</button>
-            <button id="stop-button" class="stop">Stop</button>
-        </div>
+        <form id="traffic-light-form">
+            <div class="timeout-group">
+                <label for="red-timeout">Red Light Timeout (seconds)</label>
+                <input type="number" id="red-timeout" name="red-timeout" step="0.1" placeholder="Enter timeout for Red">
+            </div>
+            <div class="timeout-group">
+                <label for="yellow-timeout">Yellow Light Timeout (seconds)</label>
+                <input type="number" id="yellow-timeout" name="yellow-timeout" step="0.1" placeholder="Enter timeout for Yellow">
+            </div>
+            <div class="timeout-group">
+                <label for="green-timeout">Green Light Timeout (seconds)</label>
+                <input type="number" id="green-timeout" name="green-timeout" step="0.1" placeholder="Enter timeout for Green">
+            </div>
+            <div class="button-group">
+                <button type="submit" id="start-button" name="start-button" value="1">Start</button>
+                <button type="button" id="stop-button" class="stop">Stop</button>
+            </div>
+        </form>
         <div id="notification" class="notification"></div>
     </div>
     <script src="script.js"></script>

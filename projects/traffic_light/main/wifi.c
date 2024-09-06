@@ -23,14 +23,13 @@ static SemaphoreHandle_t s_semph_get_ip6_addrs = NULL;
 
 static int s_retry_num = 0;
 
-static void handler_on_wifi_disconnect(void *arg, esp_event_base_t event_base,
-                                       int32_t event_id, void *event_data)
+void handler_on_wifi_disconnect(void *arg, esp_event_base_t event_base,
+                                int32_t event_id, void *event_data)
 {
     s_retry_num++;
     if (s_retry_num > CONFIG_WIFI_CONN_MAX_RETRY)
     {
         ESP_LOGI(TAG, "WiFi Connect failed %d times, stop reconnect.", s_retry_num);
-        /* let wifi_sta_do_connect() return */
         if (s_semph_get_ip_addrs)
         {
             xSemaphoreGive(s_semph_get_ip_addrs);
@@ -53,22 +52,19 @@ static void handler_on_wifi_disconnect(void *arg, esp_event_base_t event_base,
     ESP_ERROR_CHECK(err);
 }
 
-static void wifi_handler_on_wifi_connect(void *esp_netif, esp_event_base_t event_base,
-                                         int32_t event_id, void *event_data)
+void wifi_handler_on_wifi_connect(void *esp_netif, esp_event_base_t event_base,
+                                  int32_t event_id, void *event_data)
 {
 #if CONFIG_WIFI_CONNECT_IPV6
     esp_netif_create_ip6_linklocal(esp_netif);
 #endif // CONFIG_WIFI_CONNECT_IPV6
 }
 
-static void wifi_handler_on_sta_got_ip(void *arg, esp_event_base_t event_base,
-                                       int32_t event_id, void *event_data)
+void wifi_handler_on_sta_got_ip(void *arg, esp_event_base_t event_base,
+                                int32_t event_id, void *event_data)
 {
     s_retry_num = 0;
     ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
-
-    // if (!wifi_is_our_netif(WIFI_NETIF_DESC_STA, event->esp_netif))
-    //     return;
     
     ESP_LOGI(TAG, "Got IPv4 event: Interface \"%s\" address: " IPSTR,
              esp_netif_get_desc(event->esp_netif),
@@ -116,7 +112,6 @@ void wifi_start(void)
     ESP_ERROR_CHECK(esp_wifi_init(&cfg));
 
     esp_netif_inherent_config_t esp_netif_config = ESP_NETIF_INHERENT_DEFAULT_WIFI_STA();
-    // Warning: the interface desc is used in tests to capture actual connection details (IP, gw, mask)
     esp_netif_config.if_desc = NETIF_DESC_STA;
     esp_netif_config.route_prio = 128;
     s_wifi_sta_netif = esp_netif_create_wifi(WIFI_IF_STA, &esp_netif_config);

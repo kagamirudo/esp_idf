@@ -8,27 +8,36 @@ function validateInput(event) {
 
 function showNotification(message, isSuccess) {
     const notification = document.getElementById('notification');
-    notification.textContent = message;
+    if (message.includes('timeouts:')) {
+        const [firstPart, secondPart] = message.split('timeouts:');
+        notification.innerHTML = `${firstPart}timeouts:<br>${secondPart.trim()}`;
+    } else {
+        notification.textContent = message;
+    }
     notification.className = 'notification ' + (isSuccess ? 'success' : 'error');
     notification.style.display = 'block';
 }
 
 function sendData(action) {
-    const redTimeout = document.getElementById('red-timeout').value;
-    const yellowTimeout = document.getElementById('yellow-timeout').value;
-    const greenTimeout = document.getElementById('green-timeout').value;
+    const form = document.getElementById('traffic-light-form');
+    const formData = new FormData(form);
+    const searchParams = new URLSearchParams(formData);
 
-    if (redTimeout && yellowTimeout && greenTimeout) {
-        // Simulate sending data to the server
-        const success = Math.random() > 0.2; // 80% chance of success
-        if (success) {
-            showNotification(`Data sent successfully for ${action} action!`, true);
-        } else {
-            showNotification(`Failed to send data for ${action} action. Please try again.`, false);
-        }
-    } else {
-        showNotification('Please enter valid timeouts for all lights.', false);
+    if (action === 'stop') {
+        searchParams.set('stop-button', '1');
     }
+
+    fetch('/get?' + searchParams.toString(), {
+        method: 'GET',
+    })
+        .then(response => response.text())
+        .then(data => {
+            showNotification(data, true);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            showNotification('An error occurred. Please try again.', false);
+        });
 }
 
 window.onload = function () {
@@ -37,7 +46,8 @@ window.onload = function () {
         input.addEventListener('input', validateInput);
     });
 
-    document.getElementById('start-button').addEventListener('click', function () {
+    document.getElementById('traffic-light-form').addEventListener('submit', function (e) {
+        e.preventDefault();
         sendData('start');
     });
 
