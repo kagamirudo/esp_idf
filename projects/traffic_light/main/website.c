@@ -30,7 +30,7 @@ static esp_err_t serve_file(httpd_req_t *req, const char *filename, const char *
 static esp_err_t input_get_handler(httpd_req_t *req);
 
 // Embedded file declarations
-#define DECLARE_EMBEDDED_FILE(name) \
+#define DECLARE_EMBEDDED_FILE(name)                                                     \
     extern const unsigned char _binary_##name##_start[] asm("_binary_" #name "_start"); \
     extern const unsigned char _binary_##name##_end[] asm("_binary_" #name "_end")
 
@@ -142,7 +142,8 @@ static esp_err_t input_get_handler(httpd_req_t *req)
     if (buf_len > 1)
     {
         buf = malloc(buf_len);
-        if (buf == NULL) {
+        if (buf == NULL)
+        {
             ESP_LOGE(TAG, "buffer alloc failed");
             return ESP_ERR_NO_MEM;
         }

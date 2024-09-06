@@ -65,7 +65,7 @@ void wifi_handler_on_sta_got_ip(void *arg, esp_event_base_t event_base,
 {
     s_retry_num = 0;
     ip_event_got_ip_t *event = (ip_event_got_ip_t *)event_data;
-    
+
     ESP_LOGI(TAG, "Got IPv4 event: Interface \"%s\" address: " IPSTR,
              esp_netif_get_desc(event->esp_netif),
              IP2STR(&event->ip_info.ip));
