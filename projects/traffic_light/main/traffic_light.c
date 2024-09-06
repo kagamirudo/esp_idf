@@ -53,12 +53,8 @@ void app_main(void)
     while (1)
     {
         if (run)
-        {
             run_traffic_light_sequence(traffic_lights, traffic_light_timeout, light_count);
-        }
         else
-        {
             delay_seconds(10);
-        }
     }
 }
