@@ -55,6 +55,6 @@ void app_main(void)
         if (run)
             run_traffic_light_sequence(traffic_lights, traffic_light_timeout, light_count);
         else
-            delay_seconds(10);
+            delay_seconds(1);
     }
 }
