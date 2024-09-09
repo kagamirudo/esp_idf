@@ -1,4 +1,5 @@
-menu "Connection Configuration"
+menu "micro-ROS Configuration"
+
     config MICRO_ROS_APP_STACK
         int "Stack the micro-ROS app (Bytes)"
         default 16000
@@ -10,4 +11,5 @@ menu "Connection Configuration"
         default 5
         help
         Priority of micro-ros task higher value means higher priority
+
 endmenu

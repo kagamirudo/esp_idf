@@ -8,11 +8,12 @@
 #define GREEN_LED 18
 #define YELLOW_LED 19
 #define RED_LED 21
+#define TEST_LED BLUE_LED
 
 extern const char *TAG;
 
-const int traffic_lights[] = {GREEN_LED, YELLOW_LED, RED_LED, BLUE_LED};
-float traffic_light_timeout[4] = {1, 1, 1, 1};
+const int traffic_lights[] = {GREEN_LED, YELLOW_LED, RED_LED};
+float traffic_light_timeout[3] = {1, 1, 1};
 const size_t light_count = sizeof(traffic_lights) / sizeof(traffic_lights[0]);
 extern bool run;
 
