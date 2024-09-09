@@ -22,7 +22,6 @@ This project implements a traffic light controller using an ESP32 microcontrolle
 1. Configure the project using `idf.py menuconfig` to set Wi-Fi credentials and other parameters.
 2. Build and flash the project to your ESP32 device.
 3. Access the web interface via the ESP32's IP address.
-4. Use ROS 2 to publish messages to the `/led` topic to control the traffic light sequence.
 
 ## Dependencies
 
