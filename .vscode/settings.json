@@ -10,7 +10,8 @@
         "stdbool.h": "c",
         "esp_netif_private.h": "c",
         "esp_netif.h": "c",
-        "*.ipp": "c"
+        "*.ipp": "c",
+        "uros_network_interfaces.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "idf.port": "/dev/ttyUSB0",

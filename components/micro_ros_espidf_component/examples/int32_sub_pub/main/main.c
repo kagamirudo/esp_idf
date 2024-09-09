@@ -39,7 +39,7 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time)
 void subscription_callback(const void * msgin)
 {
 	const std_msgs__msg__Int32 * msg = (const std_msgs__msg__Int32 *)msgin;
-	printf("Received: %d\n",  (int)  msg->data);
+	printf("Received: %d\n",  (int)msg->data);
 }
 
 void micro_ros_task(void * arg)
