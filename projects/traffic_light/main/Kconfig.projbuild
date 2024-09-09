@@ -2,6 +2,18 @@ menu "Connection Configuration"
 
     orsource "$IDF_PATH//common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
 
+    config MICRO_ROS_APP_STACK
+        int "Stack the micro-ROS app (Bytes)"
+        default 16000
+        help
+        Stack size in Bytes of the micro-ROS app
+
+    config MICRO_ROS_APP_TASK_PRIO
+        int "Priority of the micro-ROS app"
+        default 5
+        help
+        Priority of micro-ros task higher value means higher priority
+
     config ENV_GPIO_RANGE_MIN
         int "Minimum GPIO pin number"
         default 0
@@ -432,6 +444,5 @@ menu "Connection Configuration"
         endchoice
 
     endif
-
 
 endmenu
