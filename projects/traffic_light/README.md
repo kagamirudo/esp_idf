@@ -2,6 +2,15 @@
 
 This project implements a traffic light controller using an ESP32 microcontroller and Micro-ROS. It combines hardware control of LED traffic lights with a web interface and ROS 2 communication.
 
+
+## Project Versions
+
+- **ROS 2 Version**: For a more advanced version of this project that integrates with ROS 2, please visit:
+  [Traffic Light Control with ROS 2](https://github.com/kagamirudo/esp_idf/tree/main/components/micro_ros_espidf_component/examples/traffic_light)
+
+This ROS 2 version offers additional features and capabilities, leveraging the power of the Robot Operating System for more complex traffic management scenarios.
+
+
 ## Features
 
 1. **Traffic Light Control**: Controls a set of LEDs representing traffic lights (green, yellow, red, and blue).
@@ -22,7 +31,6 @@ This project implements a traffic light controller using an ESP32 microcontrolle
 1. Configure the project using `idf.py menuconfig` to set Wi-Fi credentials and other parameters.
 2. Build and flash the project to your ESP32 device.
 3. Access the web interface via the ESP32's IP address.
-4. Use ROS 2 to publish messages to the `/led` topic to control the traffic light sequence.
 
 ## Dependencies
 
