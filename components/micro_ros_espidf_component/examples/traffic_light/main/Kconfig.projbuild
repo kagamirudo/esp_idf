@@ -12,4 +12,10 @@ menu "micro-ROS Configuration"
         help
         Priority of micro-ros task higher value means higher priority
 
+    config MICRO_ROS_ESP_USE_ROS2
+        bool "Enable ROS2 support"
+        default n
+        help
+            Enable this option to use ROS2 features.
+
 endmenu

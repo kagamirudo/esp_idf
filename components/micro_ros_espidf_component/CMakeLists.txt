@@ -1,6 +1,9 @@
-idf_component_register(SRCS "network_interfaces/uros_ethernet_netif.c" "network_interfaces/uros_wlan_netif.c"
-                       INCLUDE_DIRS "network_interfaces"
-                       REQUIRES nvs_flash esp_wifi esp_eth lwip)
+idf_component_register(SRCS "network_interfaces/uros_ethernet_netif.c" 
+                            "network_interfaces/uros_wlan_netif.c"
+                        INCLUDE_DIRS "network_interfaces"
+                        REQUIRES nvs_flash esp_wifi esp_eth lwip
+                        #PRIV_REQUIRES esp_driver_gpio
+                        )
 
 if(CMAKE_GENERATOR STREQUAL "Unix Makefiles")
 set(submake "make")

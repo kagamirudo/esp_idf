@@ -53,17 +53,42 @@ const char *TAG = "Traffic Light";
 TaskHandle_t led_task_handle = NULL;
 bool run = false;
 
+rcl_publisher_t publisher;
 rcl_subscription_t subscriber;
-std_msgs__msg__String msg;
+std_msgs__msg__String send_msg;
+std_msgs__msg__String recv_msg;
+
+void init_msg_string(std_msgs__msg__String *msg)
+{
+    msg->data.data = (char *)malloc(ARRAY_LEN * sizeof(char));
+    msg->data.size = 0;
+    msg->data.capacity = ARRAY_LEN;
+}
+
+void echo_light_status()
+{
+    if (!run)
+        snprintf(send_msg.data.data, ARRAY_LEN, "Light Status: OFF");
+    else
+        snprintf(send_msg.data.data, ARRAY_LEN, "Light Status: ON");
+    send_msg.data.size = strlen(send_msg.data.data);
+    RCSOFTCHECK(rcl_publish(&publisher, &send_msg, NULL));
+    // printf("Sent: %s", send_msg.data.data);
+}
 
 void led_task(void *pvParameters)
 {
     while (1)
     {
         if (run)
+        {
             run_traffic_light_sequence(traffic_lights, traffic_light_timeout, light_count);
+        }
         else
+        {
             delay_seconds(1);
+        }
+        echo_light_status();
     }
 }
 
@@ -117,13 +142,21 @@ void micro_ros_task(void *arg)
     rcl_node_t node = rcl_get_zero_initialized_node();
     RCCHECK(rclc_node_init_default(&node, "traffic_controller", "", &support));
 
+    // Create publisher.
+    ESP_LOGI(TAG, "Creating publisher");
+    RCCHECK(rclc_publisher_init_default(
+        &publisher,
+        &node,
+        ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, String),
+        "led_pub"));
+
     // Create subscriber
     ESP_LOGI(TAG, "Creating subscriber");
     RCCHECK(rclc_subscription_init_default(
         &subscriber,
         &node,
         ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, String),
-        "led"));
+        "led_sub"));
 
     // Create executor
     ESP_LOGI(TAG, "Creating executor");
@@ -131,11 +164,11 @@ void micro_ros_task(void *arg)
     RCCHECK(rclc_executor_init(&executor, &support.context, 1, &allocator));
 
     // Initialize the message - really important
-    msg.data.data = (char *)malloc(ARRAY_LEN * sizeof(char));
-    msg.data.size = 0;
-    msg.data.capacity = ARRAY_LEN;
+    init_msg_string(&send_msg);
+    init_msg_string(&recv_msg);
 
-    RCCHECK(rclc_executor_add_subscription(&executor, &subscriber, &msg, &subscription_callback, ON_NEW_DATA));
+    RCCHECK(rclc_executor_add_subscription(&executor, &subscriber, &recv_msg,
+                                           &subscription_callback, ON_NEW_DATA));
 
     initialize_traffic_lights(traffic_lights, light_count);
 
@@ -151,6 +184,7 @@ void micro_ros_task(void *arg)
     // Clean up
     ESP_LOGI(TAG, "Cleaning up");
     RCCHECK(rcl_subscription_fini(&subscriber, &node));
+    RCCHECK(rcl_publisher_fini(&publisher, &node));
     RCCHECK(rcl_node_fini(&node));
 
     vTaskDelete(NULL);
