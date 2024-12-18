@@ -1,4 +1,15 @@
-# Traffic Light Control with micro-ROS
+---
+title: Traffic Light Control with micro-ROS
+author: Gary Pham - gp492
+date: December 18th 2024
+geometry: margin=2cm
+output: pdf_document
+header-includes:
+ - \usepackage{fvextra}
+ - \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+---
+
+## Overview
 
 This project has been updated to support multiple ESP32 boards using a master-slave protocol. One node acts as a subscriber, while the rest function as publishers. The source code is structured to allow configuration via `#define` directives, enabling you to set each board as either ROOT or CHILD, depending on its role in the network. The previous functionality has been retained, with additional features added to enhance the project.
 
@@ -31,7 +42,7 @@ This repository contains all the necessary files and instructions to set up and 
 
 - Multiple ESP32 development boards
 - 3 LEDs (red, yellow, and green) per board
-- 3 resistors (220Ω - 330Ω) per board
+- 3 resistors (220 $\Omega$ - 330 $\Omega$) per board
 - Breadboard and jumper wires
 
 ## Software Requirements
@@ -67,7 +78,7 @@ This repository contains all the necessary files and instructions to set up and 
 5. Run the Docker container for building and flashing:
    ``` bash
    cd ./../../.
-   docker run -it --rm --user espidf --volume="/etc/timezone:/etc/timezone:ro" -v  $(pwd):/micro_ros_espidf_component -v  /dev:/dev --privileged --workdir   /micro_ros_espidf_component/examples/traffic_light microros/esp-idf-microros:latest /bin/bash
+   docker run -it --rm --user espidf --volume="/etc/timezone:/etc/timezone:ro" -v  $(pwd):/micro_ros_espidf_component -v  /dev:/dev --privileged --workdir /micro_ros_espidf_component/examples/traffic_light microros/esp-idf-microros:latest /bin/bash
    ```
    This command will start a Docker container with the ESP-IDF and micro-ROS environment set up. You'll be dropped into a bash shell inside the container.
 
